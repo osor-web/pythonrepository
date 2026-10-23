@@ -57,8 +57,8 @@ elif st.session_state.step == 3:
             st.rerun()
 
 # Game Over / Win Screen
-elif st.session_state.step == "over":
-    st.error(st.session_state.game_over) if "Win" not in st.session_state.game_over else st.success(st.session_state.game_over)
-    if st.button("Play Again"):
-        st.session_state.step = 1
-        st.rerun()
+if "win" in
+st.session_state.game_over:
+    st.success(st.session_state.game_over)
+else:
+    st.error(st.session_state.game_over
