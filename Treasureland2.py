@@ -1,4 +1,6 @@
 import streamlit as st
+if "game_over" not in st.session_state:
+    st.session_state.game_over = ""
 
 st.title("🏝️ Treasure Island Adventure")
 st.write("THINK BEYOND THE BOX! The questions ahead may be trickier than they look.")
@@ -57,9 +59,8 @@ elif st.session_state.step == 3:
             st.session_state.step = "over"
             st.rerun()
 
-
     # Game Over / Win Screen
-if st.session_state.game_over == "You win! You found the treasure! 🎉":
-    st.success(st.session_state.game_over)
-else:
-    st.error(st.session_state.game_over)
+if st.session_state.game_over == "win":
+    st.success("You win! You found the treasure!")
+elif st.session_state.game_over == "lose":
+    st.error("Game Over!")
