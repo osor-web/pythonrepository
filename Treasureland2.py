@@ -55,10 +55,3 @@ elif st.session_state.step == 3:
             st.session_state.game_over = "You Win! You found the treasure! 🎉"
             st.session_state.step = "over"
             st.rerun()
-
-# Game Over / Win Screen
-if "win" in
-st.session_state.game_over:
-    st.success(st.session_state.game_over)
-else:
-    st.error(st.session_state.game_over
