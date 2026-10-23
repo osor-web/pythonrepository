@@ -20,7 +20,7 @@ if st.session_state.step == 1:
             st.rerun()
     with col2:
         if st.button("Go Right"):
-            st.session_state.game_over = "You fell into a hole. Game over."
+            st.session_state.game_over = "lose"
             st.session_state.step = "over"
             st.rerun()
 
@@ -30,7 +30,7 @@ elif st.session_state.step == 2:
     col1, col2 = st.columns(2)
     with col1:
         if st.button("Swim"):
-            st.session_state.game_over = "You were attacked by trout. Game over."
+            st.session_state.game_over = "lose."
             st.session_state.step = "over"
             st.rerun()
     with col2:
@@ -44,18 +44,18 @@ elif st.session_state.step == 3:
     col1, col2, col3 = st.columns(3)
     with col1:
         if st.button("Red Door"):
-            st.session_state.game_over = "You were burned by fire. Game over."
+            st.session_state.game_over = "lose"
             st.session_state.step = "over"
             st.rerun()
     with col2:
         if st.button("Yellow Door"):
-            st.session_state.game_over = "You were eaten by beasts. Game over."
+            st.session_state.game_over = "lose"
             st.session_state.step = "over"
             st.rerun()
 
     with col3:
         if st.button("Blue Door"):
-            st.session_state.game_over = "You Win! You found the treasure! 🎉"
+            st.session_state.game_over = "win"
             st.session_state.step = "over"
             st.rerun()
 
