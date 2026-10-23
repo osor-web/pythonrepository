@@ -51,14 +51,15 @@ elif st.session_state.step == 3:
             st.session_state.step = "over"
             st.rerun()
 
-    # Game Over / Win Screen
-elif st.session_state.step == "over":
-    st.error(st.session_state.game_over) if "Win" not in st.session_state.game_over else st.success(st.session_state.game_over)
-    if st.button("Play Again"):
-        st.session_state.step = 1
-        st.rerun()
     with col3:
         if st.button("Blue Door"):
             st.session_state.game_over = "You Win! You found the treasure! 🎉"
             st.session_state.step = "over"
             st.rerun()
+
+
+    # Game Over / Win Screen
+if st.session_state.game_over == "Win":
+    st.success("🎉You win! You found the treasure!")
+else:
+    st.error(st.session_state.game_over)
